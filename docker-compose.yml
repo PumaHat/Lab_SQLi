@@ -1,0 +1,24 @@
+version: '3.1'
+services:
+  webserver:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./site:/var/www/html
+    links:
+        - data_base
+
+  data_base:
+    image: mariadb
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:  # Estas corresponden al archivo .env
+      - MARIADB_ROOT_PASSWORD=${ROOT_PASS} # nombre de root que parece necesitar
+      - MARIADB_USER=${NAME_USER} # El usuario de la base de datos
+      - MARIADB_PASSWORD=${PASS_USER} # Contraseña del usuario sql
+      - MARIADB_DATABASE=${DATABASE} # Nombre de la base de datos
+    volumes:
+      - ./sqliDatabase.sql:/docker-entrypoint-initdb.d/sqliDatabase.sql
+
