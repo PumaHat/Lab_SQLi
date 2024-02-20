@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <title>SQLI</title>
+</head>
+<body>
+    <header>
+        <img src="images1/logo.png" alt="Pumahat Cybersecurity Team">
+        <h1 id="titulo">Pumahat Cybersecurity Team</h1>
+    </header>
+    
+    <article>
+        <h1>SQLI Injections Labs</h1>
+        <div id="sqli">
+            <a href="1_sqli/1_sqli.php">
+                <div class="cajita">
+                    <img src="images1/sqli.jpg" alt="sqli injection" >
+                    <p>Lab 01</p>
+                </div>
+            </a>
+            <a href="form2.html">
+                <div class="cajita">
+                    <img src="images1/sqli.jpg" alt="sqli injection" >
+                    <p>Lab 02</p>
+                </div>
+            </a>
+            <a href="form3.html">
+                <div class="cajita">
+                    <img src="images1/sqli.jpg" alt="sqli injection" >
+                    <p>Lab 03</p>
+                </div>
+            </a>
+        </div>
+    </article>
+
+    <article hidden id="redirige">
+        <div id="formulario">
+            <form method="post" action="1_sqli.php">
+                <label for="user">Nombre:</label>
+                <input type="text" name="username" placeholder="Ingresa tu nombre de usuario">
+                <label for="pass">Contraseña:</label>
+                <input type="password" name="password" accept-charset="UTF-8" placeholder="Ingresa tu contraseña">
+                <input type="submit" id="submit">
+            </form>
+        </div>
+    </article>
+</body>
+</html>
