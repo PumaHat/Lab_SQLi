@@ -10,7 +10,7 @@ services:
         - data_base
 
   data_base:
-    image: mariadb
+    image: mariadb:11.5.2
     restart: always
     ports:
       - "3306:3306"
